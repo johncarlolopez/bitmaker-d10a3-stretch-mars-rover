@@ -19,15 +19,13 @@ y=[]
 ynum.times {|num|
   y[num] = x
 }
-# print x
-# print y
+curiosity = Rover.new
 
-yloc = 0
-
+#temp block to create grid
+yloc = 0 #using var to keep track of y as having difficulty returning current y value in each loop below
 y.each{|currenty|
 
   x.each{|currentx|
-    # print "!!#{currenty}!!"
     if yloc == 0
       case currentx
       when 2,4,6,8,10,12,14,16,18
@@ -42,16 +40,21 @@ y.each{|currenty|
         print " "
       end
     else
-      case currentx
-      when 0
-        print "#{(10-yloc).abs}"
-      when 2,4,6,8,10,12,14,16,18
-        print "_"
-      when 1,3,5,7,9,11,13,15,17,19
-        print "|"
+      if condition
+
       else
-        print currenty[currentx]
+        case currentx
+        when 0
+          print "#{(10-yloc).abs}"
+        when 2,4,6,8,10,12,14,16,18
+          print "_"
+        when 1,3,5,7,9,11,13,15,17,19
+          print "|"
+        else
+          print currenty[currentx]
+        end  
       end
+
     end
 
 
@@ -59,5 +62,4 @@ y.each{|currenty|
   yloc += 1
   print "\n"
 }
-
-# print y
+#end of temp block to make grid
