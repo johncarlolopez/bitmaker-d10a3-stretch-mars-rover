@@ -1,3 +1,4 @@
+require "./Rover.rb"
 #   _ _ _ _ _ _ _ _ _
 # 9|_|_|_|_|_|_|_|_|_|        N
 # 8|_|_|_|_|_|_|_|_|_|      W   E
@@ -20,7 +21,12 @@ ynum.times {|num|
   y[num] = x
 }
 curiosity = Rover.new
-
+#test movement
+# 1.times {curiosity.command("R")
+# puts curiosity.return_loc}
+#
+# 10.times {puts curiosity.return_loc
+# curiosity.command("M")}
 #temp block to create grid
 yloc = 0 #using var to keep track of y as having difficulty returning current y value in each loop below
 y.each{|currenty|
@@ -40,22 +46,27 @@ y.each{|currenty|
         print " "
       end
     else
-      if condition
-
-      else
+          # if condition
+          #
+          # else
         case currentx
-        when 0
-          print "#{(10-yloc).abs}"
-        when 2,4,6,8,10,12,14,16,18
-          print "_"
-        when 1,3,5,7,9,11,13,15,17,19
-          print "|"
-        else
-          print currenty[currentx]
-        end  
+          when 0
+            print "#{(10-yloc).abs}"
+          when 2,4,6,8,10,12,14,16,18
+            if (curiosity.xloc == xloc) && (curiosity.yloc == yloc)
+              print "X"
+            else
+              print "_"
+            end
+
+          when 1,3,5,7,9,11,13,15,17,19
+            print "|"
+          else
+            print currenty[currentx]
+        end
       end
 
-    end
+    # end
 
 
   }
@@ -63,3 +74,5 @@ y.each{|currenty|
   print "\n"
 }
 #end of temp block to make grid
+
+# puts curiosity.return_loc
