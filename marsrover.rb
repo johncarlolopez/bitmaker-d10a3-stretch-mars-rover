@@ -53,7 +53,7 @@ y.each{|currenty|
           when 0
             print "#{(10-yloc).abs}"
           when 2,4,6,8,10,12,14,16,18
-            if (curiosity.xloc == xloc) && (curiosity.yloc == yloc)
+            if (curiosity.xloc == currentx) && (curiosity.yloc == yloc)
               print "X"
             else
               print "_"
@@ -73,6 +73,8 @@ y.each{|currenty|
   yloc += 1
   print "\n"
 }
+puts curiosity.return_loc
+
 #end of temp block to make grid
 
 # puts curiosity.return_loc
