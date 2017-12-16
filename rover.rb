@@ -16,6 +16,7 @@ class Rover
     #yloc subtracted from 10 and given absolute value as the grid is y inverted
     "X:#{xloc/2} Y:#{(10-yloc).abs} Heading:#{@direction.capitalize}"
   end
+  #issues commands to rover
   def command(command)
     #case to determine which L,R, or M command is chosen
     case command.downcase
@@ -45,8 +46,8 @@ class Rover
       end
     when "m"
       #forward movement of rover based on current heading/direction
-      #cant go below x = 2 or over 18
-      #cant go below y = 1 or over 9
+      #rover can't go below x = 2 or over x = 18
+      #rover can't go below y = 1 or over y = 9
       case @direction
         when "n"
           if (@yloc > 1)
