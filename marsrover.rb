@@ -1,6 +1,6 @@
 #Stretch: Mars Rover
 #John Lopez
-require "./Rover.rb"
+require "./rover.rb"
 #reference
 #   _ _ _ _ _ _ _ _ _
 # 9|_|_|_|_|_|_|_|_|_|        N
