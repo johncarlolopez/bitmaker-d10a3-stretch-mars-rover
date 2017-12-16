@@ -12,11 +12,15 @@ class Rover
     @yloc
   end
   def return_loc
-    "X:#{xloc} Y:#{yloc} Heading:#{@direction.capitalize}"
+    #xloc divided by 2 as the xloc visually is every 2 spaces
+    #yloc subtracted from 10 and given absolute value as the grid is y inverted
+    "X:#{xloc/2} Y:#{(10-yloc).abs} Heading:#{@direction.capitalize}"
   end
   def command(command)
+    #case to determine which L,R, or M command is chosen
     case command.downcase
     when "l"
+      #case to set new heading/direction base on current heading/direction
       case @direction
       when "n"
         @direction = "w"
@@ -28,6 +32,7 @@ class Rover
         @direction = "s"
       end
     when "r"
+      #case to set new heading/direction base on current heading/direction
       case @direction
       when "n"
         @direction = "e"
@@ -39,6 +44,7 @@ class Rover
         @direction = "n"
       end
     when "m"
+      #forward movement of rover based on current heading/direction
       #cant go below x = 2 or over 18
       #cant go below y = 1 or over 9
       case @direction
